@@ -16,11 +16,11 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 ## To Do e suddivisione dei compiti
 
 | Task                       | Assegnato a          | Completato |
-|----------------------------|----------------------|------------|
-| Analisi dei requisiti      | Gianluca e Valentino | ☐         |
-| WBS                        | Gianluca e Valentino | ☐         |
-| Gantt                      | Gianluca e Valentino | ☐        |
-| Sitemap e Wireframe        | Alessandro           | ☐        |
-| Codice sorgente            | Antonio              | ☐        |
-| README.md                  | Antonio              | ☐        |
-| Relazione tecnica          | Tutti                | ☐        |
+|----------------------------|----------------------|----------|
+| Analisi dei requisiti      | Gianluca e Valentino |    ☐    |
+| WBS                        | Gianluca e Valentino |    ☐    |
+| Gantt                      | Gianluca e Valentino |    ☐    |
+| Sitemap e Wireframe        | Alessandro           |    ☐    |
+| Codice sorgente            | Antonio              |    ☐    |
+| README.md                  | Antonio              |    ☐    |
+| Relazione tecnica          | Tutti                |    ☐    |
