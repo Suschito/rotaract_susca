@@ -19,12 +19,12 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 
 | Task                  | Assegnato a            | Stato         |
 |-----------------------|------------------------|---------------|
-| Analisi dei requisiti | Gianluca e Valentino   | ⬜      |
-| WBS                   | Gianluca e Valentino   | ⬜      |
-| Gantt                 | Gianluca e Valentino   | ⬜      |
-| Sitemap e Wireframe   | Alessandro             | ⬜      |
-| Codice sorgente       | Antonio                | ⬜      |
-| README.md             | Antonio                | ⬜      |
-| Relazione tecnica     | Tutti                  | ⬜      |
+| Analisi dei requisiti | Gianluca e Valentino   |⬜|
+| WBS                   | Gianluca e Valentino   |⬜|
+| Gantt                 | Gianluca e Valentino   |⬜|
+| Sitemap e Wireframe   | Alessandro             |⬜|
+| Codice sorgente       | Antonio                |⬜|
+| README.md             | Antonio                |⬜|
+| Relazione tecnica     | Tutti                  |⬜|
 
 </p>
