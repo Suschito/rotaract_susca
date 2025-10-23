@@ -15,7 +15,6 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 
 ## To Do e suddivisione dei compiti
 
-<p align="center">
 
 | Task                  | Assegnato a            | Stato         |
 |-----------------------|------------------------|---------------|
@@ -27,4 +26,3 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 | README.md             | Antonio                |⬜|
 | Relazione tecnica     | Tutti                  |⬜|
 
-</p>
