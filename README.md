@@ -15,10 +15,10 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 
 ## To Do
 
-[ ] Analisi requisiti
-[ ] WBS
-[ ] Gantt
-[ ] Sitemap e wireframe
-[ ] Codice sorgente
-[ ] README.md
-[ ] Relazione tecnica
+- [ ] Analisi requisiti
+- [ ] WBS
+- [ ] Gantt
+- [ ] Sitemap e wireframe
+- [ ] Codice sorgente
+- [ ] README.md
+- [ ] Relazione tecnica
