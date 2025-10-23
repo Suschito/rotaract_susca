@@ -25,4 +25,4 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 | Codice sorgente       | Antonio                |⬜|
 | README.md             | Antonio                |⬜|
 | Relazione tecnica     | Tutti                  |⬜|
-
+| Presentazione         | Tutti                  |⬜|
