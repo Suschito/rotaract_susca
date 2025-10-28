@@ -26,3 +26,6 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 | README.md             | Antonio                |☐|
 | Relazione tecnica     | Tutti                  |☐|
 | Presentazione         | Tutti                  |☐|
+
+---
+
