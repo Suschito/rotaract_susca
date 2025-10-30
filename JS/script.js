@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
   
-    const speed = 100; // smaller = faster
+    const speed = 125; // smaller = faster
   
     const animateCounters = () => {
       counters.forEach(counter => {
