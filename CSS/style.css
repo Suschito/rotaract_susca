@@ -1,37 +1,31 @@
-/* Style for the navigation bar */
+/* ===== NAVIGATION BAR ===== */
 .top-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white; /* White background */
-    color: #000000;
+    background-color: white;
+    color: #000;
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
     font-size: 28px;
-    border-bottom: 2px solid #E2457C; /* Optional: subtle separator */
+    border-bottom: 2px solid #E2457C;
 }
 
-/* Style for navigation links */
+/* Navigation links */
 .top-nav a {
-    color: #000000; /* Pink text */
+    color: #000;
     background: white;
     text-decoration: none;
     margin: 0 20px;
     font-size: 22px;
-    font-family: comic sans ms, sans-serif;
+    font-family: "Comic Sans MS", sans-serif;
     padding: 10px 20px;
     border-radius: 8px;
-    transition: text-decoration 0.2s;
+    transition: color 0.3s, text-decoration-color 0.3s;
     display: inline-block;
     border: none;
-}
-
-/* Hover effect: underline with fade */
-.top-nav a {
-    transition: text-decoration-color 0.3s, color 0.3s;
-    text-decoration-color: transparent;
 }
 
 .top-nav a:hover {
@@ -40,51 +34,61 @@
     color: #C72C5A;
 }
 
-/* Add some padding to the body to prevent content overlap */
+/* ===== BODY ===== */
 body {
     margin: 0;
-    padding-top: 70px;
-    background: white; /* Ensure body is white */
+    padding-top: 90px; /* Prevent content from hiding behind navbar */
+    background: white;
+    font-family: Arial, sans-serif;
 }
+
+/* ===== HERO SECTION ===== */
 .header-image-section {
-    width: 100vw;
-    height: 400px;
     position: relative;
+    width: 100%;
+    height: 80vh; /* 80% of viewport height for responsiveness */
     overflow: hidden;
-    margin-bottom: 30px;
 }
-.header-image-section img {
+
+/* Video styling */
+.header-image-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    object-fit: cover; /* ensures no black bars or cropping */
+    z-index: 1;
 }
+
+/* Overlay content */
 .header-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 2;
     text-align: center;
-    color: #fff;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
+
+/* Button style */
 .round-btn {
     display: inline-block;
     margin-top: 20px;
     background: #E2457C;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 30px;
     padding: 0 32px;
     min-width: 120px;
     min-height: 48px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transition: background 0.2s;
-    white-space: nowrap;
-    text-align: center;
-    line-height: normal;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
 }
+
 .round-btn:hover {
     background: #023e8a;
 }
