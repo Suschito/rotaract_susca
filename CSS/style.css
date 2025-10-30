@@ -1,3 +1,90 @@
-h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* Style for the navigation bar */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* White background */
+    color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    font-size: 28px;
+    border-bottom: 2px solid #E2457C; /* Optional: subtle separator */
+}
+
+/* Style for navigation links */
+.top-nav a {
+    color: #000000; /* Pink text */
+    background: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 22px;
+    font-family: comic sans ms, sans-serif;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: text-decoration 0.2s;
+    display: inline-block;
+    border: none;
+}
+
+/* Hover effect: underline with fade */
+.top-nav a {
+    transition: text-decoration-color 0.3s, color 0.3s;
+    text-decoration-color: transparent;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #E2457C;
+    color: #C72C5A;
+}
+
+/* Add some padding to the body to prevent content overlap */
+body {
+    margin: 0;
+    padding-top: 70px;
+    background: white; /* Ensure body is white */
+}
+.header-image-section {
+    width: 100vw;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.header-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+.round-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #E2457C;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 0 32px;
+    min-width: 120px;
+    min-height: 48px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+    white-space: nowrap;
+    text-align: center;
+    line-height: normal;
+}
+.round-btn:hover {
+    background: #023e8a;
 }
