@@ -18,7 +18,7 @@ Questo progetto simula una commessa reale per la realizzazione di un sito web pe
 
 | Task                  | Assegnato a            | Stato |
 |-----------------------|------------------------|-------|
-| Analisi dei requisiti | Gianluca e Valentino   |☐|
+| Analisi dei requisiti | Gianluca e Valentino   |☑|
 | WBS                   | Gianluca e Valentino   |☑|
 | Gantt                 | Gianluca e Valentino   |☐|
 | Mock-Up               | Alessandro             |☑|
