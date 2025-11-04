@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Chiron GoRound TC');
 /* ===== NAVBAR ===== */
 .top-nav {
     position: fixed;
@@ -16,7 +17,7 @@
     text-decoration: none;
     margin: 0 20px;
     font-size: 22px;
-    font-family: "Comic Sans MS", sans-serif;
+    font-family: "Chiron GoRound TC", sans-serif;
     transition: color 0.3s;
   }
   .top-nav a:hover {
@@ -30,7 +31,7 @@
     margin: 0;
     padding-top: 90px;
     background: white;
-    font-family: Arial, sans-serif;
+    font-family: "Chiron GoRound TC", sans-serif;
   }
   
   /* ===== HERO ===== */
