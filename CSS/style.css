@@ -156,11 +156,17 @@
     padding: 10px;
   }
   .social-icons img {
-    width: 30px;
+    width: 60px;
+    height: 60px;
     margin: 0 5px;
-  }
+}
   .footer-bottom {
     font-size: 0.9em;
     color: #555;
   }
+  h2{
+    color: #E2457C;
+  }
+  
+
   
