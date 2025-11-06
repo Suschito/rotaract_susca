@@ -34,4 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
   
     observer.observe(document.querySelector(".stats-section"));
   });
-  
