@@ -167,4 +167,32 @@
   h2{
     color: #E2457C;
   }
-}  
+  .calendar-container {
+    display: flex;
+    justify-content: center; /* centro orizzontale */
+    margin: 40px 0; /* spazio sopra e sotto */
+  }
+
+.calendar-container iframe {
+    width: 1100px;  /* più grande */
+    height: 800px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive per tablet e smartphone */
+@media (max-width: 1024px) {
+    .calendar-container iframe {
+        width: 90%;
+        height: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendar-container iframe {
+        width: 95%;
+        height: 500px;
+    }
+}
+  
