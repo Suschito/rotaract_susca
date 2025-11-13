@@ -167,6 +167,183 @@
   h2{
     color: #E2457C;
   }
-  
+  .calendar-container {
+    display: flex;
+    justify-content: center; /* centro orizzontale */
+    margin: 40px 0; /* spazio sopra e sotto */
+  }
 
-  
+.calendar-container iframe {
+    width: 1100px;  /* più grande */
+    height: 800px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive per tablet e smartphone */
+@media (max-width: 1024px) {
+    .calendar-container iframe {
+        width: 90%;
+        height: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendar-container iframe {
+        width: 95%;
+        height: 500px;
+    }
+}
+/* ===== COLLABORAZION ROTARY SECTION ===== */
+.rotary-section {
+  background-color: #fdf2f7; /* rosa chiaro */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.rotary-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;  /* importante: usa tutta la larghezza disponibile */
+}
+
+
+.rotary-section h2 {
+  color: #E2457C;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.rotary-section p {
+  font-size: 1.15em;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.rotary-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* consente di andare a capo solo se necessario */
+}
+
+
+.rotary-links li {
+  display: inline-flex;      /* evita che il pulsante si comporti come block */
+  align-items: center;
+  justify-content: center;
+  background: #E2457C;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background 0.3s;
+  white-space: nowrap;       /* evita che il testo del pulsante vada a capo */
+}
+
+
+.rotary-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.rotary-links li:hover {
+  background: #C72C5A;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .rotary-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+/* ===== CONTACT SECTION STYLES ===== */
+
+/* Section Container */
+#contact {
+  /* Use padding to separate it from surrounding sections */
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white; /* Matches body background */
+}
+
+/* Form Container (to limit width and center it) */
+#contact form {
+  max-width: 500px;
+  margin: 0 auto; /* Centers the form horizontally */
+  padding: 30px;
+  border: 1px solid #E2457C; /* Border using brand color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff;
+}
+
+/* Grouping for Label and Input */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Aligns labels to the left within the group */
+}
+
+/* Labels */
+#contact label {
+  display: block; /* Makes the label take its own line */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+/* Input and Textarea Fields */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px; /* Rounded input fields */
+  font-size: 1em;
+  font-family: "Chiron GoRound TC", sans-serif;
+  box-sizing: border-box; /* Ensures padding doesn't increase total width */
+  transition: border-color 0.3s;
+}
+
+/* Focus State */
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #C72C5A; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Textarea specific height */
+#contact textarea {
+  resize: vertical; /* Only allow vertical resizing */
+  min-height: 100px;
+}
+
+/* Submit Button (Reusing .round-btn style) */
+#contact button[type="submit"] {
+  /* Reuses the existing style from .round-btn for consistency */
+  display: inline-block;
+  margin-top: 20px;
+  background: #E2457C; /* Pink background */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  width: 100%; /* Make button full width of the form */
+  max-width: 300px; /* Limit max width for better appearance */
+}
+
+#contact button[type="submit"]:hover {
+  background: #023e8a; /* Blue hover color, consistent with your existing CSS */
+}  
