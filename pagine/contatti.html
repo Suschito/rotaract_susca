@@ -21,7 +21,7 @@
     <br><br><br>
     <section id="contact">
         <h2>Contattaci!</h2>
-        <form action="process_form.php" method="POST">
+        <form action="" method="POST">
             
             <div class="form-group">
                 <label for="name">Nome:</label>
@@ -42,7 +42,16 @@
                 <label for="message">Messaggio (Facoltativo):</label>
                 <textarea id="message" name="message"></textarea>
             </div>
-    
+            
+            <div class="form-group privacy-group">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy" class="privacy-label">
+                    Dichiaro di aver letto e accettato l'
+                    <a href="/informativa-privacy" target="_blank" style="color: #E2457C; text-decoration: underline;">informativa sulla privacy</a>.
+                </label>
+            </div>
+            
+
             <button type="submit" style="font-family:Verdana, Geneva, Tahoma, sans-serif">Invia</button>
             
         </form>
