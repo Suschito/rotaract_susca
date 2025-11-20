@@ -305,8 +305,8 @@ h2 {
 #contact input[type="checkbox"] {
     width: auto;
     margin: 4px 10px 0 0;
-    min-width: 20px; 
-    height: 20px;
+    min-width: 17px; 
+    height: 17px;
     border: 2px solid #E2457C;
     padding: 0;
     box-sizing: content-box; 
@@ -379,4 +379,176 @@ footer {
 .footer-bottom {
     font-size: 0.9em;
     color: #555;
+}
+
+/* ======================================= */
+/* ===== TIMELINE A SERPENTE (ZIGZAG) ===== */
+/* ======================================= */
+
+.timeline-zigzag {
+    padding: 60px 20px;
+    background-color: #fdf2f7; /* Colore di sfondo leggero per risaltare */
+    text-align: center;
+    overflow-x: hidden; /* Previene lo scroll orizzontale indesiderato */
+}
+
+.timeline-zigzag h2 {
+    margin-bottom: 50px;
+}
+
+.timeline-row {
+    display: flex;
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo su schermi piccoli */
+    justify-content: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Linea Centrale di Connessione (Serpente) */
+.timeline-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px; /* Spessore della linea */
+    height: 100%;
+    background-color: #E2457C; /* Colore della linea principale */
+    z-index: 1;
+}
+
+/* Punto evento */
+.event {
+    position: relative;
+    width: 45%; /* Larghezza del contenitore evento */
+    padding: 15px 25px;
+    margin-bottom: 40px; /* Spazio tra gli eventi */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+    z-index: 2; /* Sta sopra la linea */
+}
+
+.event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pallino sulla linea per l'evento */
+.event::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #C72C5A; /* Colore del pallino */
+    border: 4px solid #fdf2f7; /* Bordo per staccarlo dallo sfondo del contenitore */
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+/* Disposizione a serpente */
+.timeline-row .event:nth-child(odd) {
+    /* Eventi sulla sinistra */
+    left: -5%; /* Spostato a sinistra rispetto al centro per dare spazio */
+    text-align: right;
+}
+
+.timeline-row .event:nth-child(even) {
+    /* Eventi sulla destra */
+    left: 5%; /* Spostato a destra rispetto al centro */
+    text-align: left;
+}
+
+/* Frecce (triangoli) per collegare gli eventi alla linea centrale */
+.timeline-row .event:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px; /* Posizionato a destra dell'evento di sinistra */
+    transform: translateY(-50%);
+    border: 10px solid transparent;
+    border-left: 10px solid #fff; /* La freccia punta a destra */
+}
+
+.timeline-row .event:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px; /* Posizionato a sinistra dell'evento di destra */
+    transform: translateY(-50%);
+    border: 10px solid transparent;
+    border-right: 10px solid #fff; /* La freccia punta a sinistra */
+}
+
+/* Posizionamento dei pallini per la disposizione a serpente */
+.timeline-row .event:nth-child(odd)::before {
+    right: -37px; /* Allinea il pallino alla linea centrale */
+}
+
+.timeline-row .event:nth-child(even)::before {
+    left: -37px; /* Allinea il pallino alla linea centrale */
+}
+
+
+/* Stili del testo */
+.event br {
+    display: none; /* Nasconde il <br> originale usato nell'HTML per una migliore formattazione */
+}
+
+.event strong {
+    display: block;
+    font-size: 1.2em;
+    color: #E2457C;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.event span {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* ===== MEDIA QUERIES per la TIMELINE (Schermi Piccoli) ===== */
+@media (max-width: 768px) {
+    .timeline-row::before {
+        left: 20px; /* Sposta la linea centrale a sinistra */
+        transform: none;
+    }
+
+    .event {
+        width: 100%; /* L'evento occupa l'intera larghezza */
+        max-width: none;
+        margin-left: 50px; /* Lascia spazio per la linea a sinistra */
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: left !important; /* Tutti gli eventi allineati a sinistra */
+    }
+    
+    .timeline-row .event:nth-child(odd),
+    .timeline-row .event:nth-child(even) {
+        left: 0; /* Rimuove tutti gli offset laterali */
+    }
+
+    /* Modifica il pallino per adattarlo alla nuova posizione della linea */
+    .event::before {
+        left: -30px !important; /* Posiziona tutti i pallini sulla linea a sinistra */
+        right: auto !important;
+        border-color: white; /* Bordo bianco per schermi piccoli */
+    }
+
+    /* Rimuove tutte le frecce per gli schermi piccoli */
+    .event::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-zigzag {
+        padding: 30px 10px;
+    }
 }
