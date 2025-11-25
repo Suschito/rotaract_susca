@@ -552,3 +552,9 @@ footer {
         padding: 30px 10px;
     }
 }
+
+.top-nav a.active {
+    color: #e94b87; 
+    text-decoration: underline;
+    font-weight: bold;
+}
