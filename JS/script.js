@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // ===== COUNTER ANIMATION (Selettiva per il "+") =====
     const counters = document.querySelectorAll(".counter");
-    const speed = 125; // smaller = faster
+    const speed = 130; // smaller = faster
   
     const animateCounters = () => {
         counters.forEach(counter => {
