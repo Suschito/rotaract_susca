@@ -38,6 +38,11 @@ h2 {
     text-decoration-color: #E2457C;
     color: #C72C5A;
 }
+.top-nav a.active {
+    color: #e94b87; 
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 /* ===== HERO SECTION (VIDEO) ===== */
 .header-image-section {
@@ -553,8 +558,95 @@ footer {
     }
 }
 
-.top-nav a.active {
-    color: #e94b87; 
-    text-decoration: underline;
+
+/* ======================================= */
+/* ===== ARCHIVIO BOLLETTINI STYLES ===== */
+/* ======================================= */
+
+.archivio-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Stile per il rettangolo che rappresenta l'Annata (l'header cliccabile) */
+.header-annata {
+    /* Usa il colore della Rotary */
+    background-color: #fdf2f7; 
+    border: 2px solid #E2457C;
+    border-radius: 8px;
+    padding: 20px 30px;
+    cursor: pointer;
+    margin-bottom: 5px; /* Spazio ridotto tra annate */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none; /* Impedisce la selezione del testo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-annata:hover {
+    background-color: #ffe6f0; /* Tonalità più scura al passaggio */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-annata h3 {
+    color: #E2457C; /* Rosso/Rosa scuro (Usa il tuo h2 color) */
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Contenitore dei Mesi (Nascosto di default) */
+.mesi-container {
+    /* **PUNTO DI CORREZIONE**: Display: none lo nasconde. */
+    display: none; 
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    border: 1px solid #E2457C;
+    border-top: none; 
+    border-radius: 0 0 8px 8px; 
+    background-color: #fff;
+    
+    /* Layout a griglia per i 12 mesi */
+    /* **PUNTO DI CORREZIONE (RIMOZIONE)**: La riga 'display: grid;' E' STATA RIMOSSA QUI per eliminare il conflitto. */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+/* Classe aggiunta da JS per rendere il contenitore visibile */
+.mesi-container.open {
+    /* **PUNTO DI CORREZIONE**: Applichiamo display: grid solo quando è 'open' */
+    display: grid; 
+}
+
+/* Stile per il rettangolo che rappresenta il Mese (link al PDF) */
+.rettangolo-mese {
+    display: block;
+    text-align: center;
+    padding: 15px 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.rettangolo-mese:hover {
+    background-color: #fdf2f7; /* Colore più chiaro al passaggio */
+    color: #E2457C;
+    transform: translateY(-2px);
+}
+
+/* Freccia/Icona per indicare l'apertura */
+.arrow {
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+/* La freccia ruota quando la cartella è aperta (classe aggiunta dal JS) */
+.header-annata.open .arrow {
+    transform: rotate(90deg); 
 }
