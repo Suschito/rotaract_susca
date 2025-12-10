@@ -8,20 +8,24 @@
     <script defer src="../JS/script.js"></script>
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="fygEHNyzvsmlo1_gitv8_";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
+      </script>
 </head>
 <body>
 
     <div class="top-nav">
         <a href="../index.html"><img src="../Media/Rotaract Club Trento trasparente.png" alt="LOGO" style="height: 110px; vertical-align: middle;"></a>
         <a href="../index.html">Home</a>
-        <a href="chisiamo.html">Chi siamo</a>
+        
+        <a href="chisiamo.php">Chi siamo</a>
         <a href="service.html">Service</a>
         <a href="eventi.html">Eventi</a>
-        <a href="collaborazioni.html">Collaborazioni con il Rotary</a>
-        <a href="contatti.html">Contatti</a>
-        <a href="bolletini.html">Bollettini</a>
+        <a href="collaborazioni.html">Collaborazioni</a>
+        <a href="contatti.html" class="active">Contatti</a>
+        <a href="bollettini.php">Bollettini</a>
+        
+        <a href="accedi.php" style="font-weight: bold; border: 2px solid #E2457C; border-radius: 20px; padding: 5px 15px;">Login</a>
     </div>
+
     <br><br><br>
     <section id="contact">
         <h2>Contattaci!</h2>

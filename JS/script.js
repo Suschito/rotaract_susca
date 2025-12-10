@@ -1,100 +1,98 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // We wrap EVERYTHING inside here to ensure HTML exists before we select it.
 
-  // ===== NAVBAR ACTIVE LINK =====
-  const links = document.querySelectorAll(".top-nav a");
-  const currentPage = window.location.pathname.split("/").pop(); 
-
-  links.forEach(link => {
-      const linkPage = link.getAttribute("href").split("/").pop();
-
-      // Correzione per la Home Page che ha un link 'index.html' ma spesso la pagina è solo '/'
-      if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
-          link.classList.add("active");
-      }
-  });
-
-  // ===== COUNTER ANIMATION (Selettiva per il "+") =====
+  // ==========================================
+  // 1. COUNTER ANIMATION
+  // ==========================================
   const counters = document.querySelectorAll(".counter");
-  const speed = 130; // smaller = faster
+  const statsSection = document.querySelector(".stats-section");
+  const speed = 200; // Lower number = Faster animation
 
-  
   const animateCounters = () => {
-      counters.forEach(counter => {
-          const updateCount = () => {
-              const target = +counter.getAttribute("data-target");
-              const count = +counter.innerText;
-              const increment = target / speed;
+    counters.forEach(counter => {
+      const updateCount = () => {
+        // Get the target number from the HTML attribute
+        const target = +counter.getAttribute("data-target");
+        
+        // Get the current number displayed (strip symbols if any)
+        const count = +counter.innerText.replace(/\D/g, ''); 
+        
+        // Calculate the jump size
+        const increment = target / speed;
 
-              if (count < target) {
-                  counter.innerText = Math.ceil(count + increment);
-                  setTimeout(updateCount, 20);
-              } else {
-                  // Ottiene l'elemento P successivo per verificare il contenuto
-                  const label = counter.nextElementSibling ? counter.nextElementSibling.innerText.toUpperCase() : '';
-
-                  let displayText = target;
-
-                  // Aggiunge il "+" solo ai contatori di Service
-                  if (label.includes("SERVICE") || label.includes("ASSOCIAZIONI")) {
-                      displayText += "+";
-                  }
-                  
-                  counter.innerText = displayText;
-              }
-          };
-          updateCount();
-      });
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          // Animation Complete
+          counter.innerText = target;
+          
+          // Re-add the "+" logic specifically for Service/Associations
+          // We check the "P" tag below the counter
+          const label = counter.nextElementSibling ? counter.nextElementSibling.innerText.toUpperCase() : '';
+          
+          if (label.includes("SOCI") || label.includes("ASSOCIAZIONI")) {
+             counter.innerText += "+";
+          }
+        }
+      };
+      updateCount();
+    });
   };
 
-  // Animate when visible on screen
-  const statsSection = document.querySelector(".stats-section");
-
-  if (statsSection) {  // evita errori sulle pagine senza counter
-      const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  animateCounters();
-                  observer.disconnect(); // run once
-              }
-          });
+  // Intersection Observer: Only runs animation when you scroll to it
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect(); // Disconnect so it runs only once
+        }
       });
-
-      observer.observe(statsSection);
+    }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+    
+    observer.observe(statsSection);
   }
 
-  // ===== CONTACT FORM HANDLING (Nuova integrazione) =====
+  // ==========================================
+  // 2. NAVBAR ACTIVE LINK
+  // ==========================================
+  const links = document.querySelectorAll(".top-nav a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    }
+  });
+
+  // ==========================================
+  // 3. CONTACT FORM
+  // ==========================================
   const contactForm = document.getElementById('contactForm');
 
-  // Il codice dentro l'if viene eseguito solo se siamo nella pagina contatti
   if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-          event.preventDefault(); // Blocca l'invio standard del form
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-          // Recupera i valori dai campi
-          const nome = document.getElementById('name').value;
-          const cognome = document.getElementById('surname').value;
-          const email = document.getElementById('email').value;
-          const messaggio = document.getElementById('message').value;
+      const nome = document.getElementById('name').value;
+      const cognome = document.getElementById('surname').value;
+      const email = document.getElementById('email').value;
+      const messaggio = document.getElementById('message').value;
+      const emailDestinatario = "rac.trento@rotaract2060.it";
+      const oggetto = "Contatto da " + nome + " " + cognome;
 
-          // Indirizzo destinazione
-          const emailDestinatario = "rac.trento@rotaract2060.it";
-          
-          // Crea l'oggetto della mail
-          const oggetto = "Contatto da " + nome + " " + cognome;
+      const corpoMessaggio = "Ciao, vi ho contattato dal sito\n\n" +
+        "Nome: " + nome + "\n" +
+        "Cognome: " + cognome + "\n" +
+        "Email utente: " + email + "\n\n" +
+        "Messaggio:\n" +
+        messaggio;
 
-          // Crea il corpo del messaggio
-          const corpoMessaggio = "Ciao, vi ho contattato dal sito\n\n" +
-                                 "Nome: " + nome + "\n" +
-                                 "Cognome: " + cognome + "\n" +
-                                 "Email utente: " + email + "\n\n" +
-                                 "Messaggio:\n" +
-                                 messaggio;
-
-          // Crea il link mailto e reindirizza
-          window.location.href = "mailto:" + emailDestinatario + 
-                                 "?subject=" + encodeURIComponent(oggetto) + 
-                                 "&body=" + encodeURIComponent(corpoMessaggio);
-      });
+      window.location.href = "mailto:" + emailDestinatario +
+        "?subject=" + encodeURIComponent(oggetto) +
+        "&body=" + encodeURIComponent(corpoMessaggio);
+    });
   }
-
 });
