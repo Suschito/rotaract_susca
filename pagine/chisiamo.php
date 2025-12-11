@@ -41,9 +41,9 @@ function ordinaPresidenti($a, $b) {
             <a href="area_riservata.php" class="round-btn" style="padding: 5px 20px; font-size: 0.9em;">✏️ Torna al Pannello Admin</a>
         </div>
     <?php endif; ?>
-
+    <br><br>
     <div class="history-container" style="max-width: 900px; margin: 0 auto; text-align: center; padding-top: 20px;">
-        
+        <br>
         <header class="page-header" style="text-align: center;">
             <h1>La storia del Rotaract Club Trento</h1>
         </header>
